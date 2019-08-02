@@ -1,0 +1,19 @@
+{
+  "name": "indesicion-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d public/sripts"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
