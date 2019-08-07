@@ -1,35 +1,41 @@
 "use strict";
 
-var add = function add(a, b) {
-  // console.log(arguments) // Not aviable in ES6
-  return a + b;
+console.log("App.js is running"); // JSX - Javascript XML
+
+var app = {
+  title: "Indecision App",
+  subtitle: "This is subtitle",
+  options: ["one", "two"]
+};
+var template = React.createElement("div", null, React.createElement("h1", null, app.title), app.subtitle && React.createElement("p", null, app.subtitle), React.createElement("p", null, app.options && app.options.length > 0 ? "here are your options" : "No options"), React.createElement("ol", null, React.createElement("li", null, "Item 1"), React.createElement("li", null, "Item 2")));
+var count = 0;
+
+var addOne = function addOne() {
+  count++;
+  renderCounterApp();
 };
 
-console.log(add(4, 8));
-var user = {
-  name: "Oscar",
-  cities: ["Philadelphia", "New York", "Kansas"],
-  printPlacesLived: function printPlacesLived() {
-    var _this = this;
-
-    return this.cities.map(function (city) {
-      return _this.name + " has lived in " + city;
-    });
-  }
+var minusOne = function minusOne() {
+  count--;
+  renderCounterApp();
 };
-user.printPlacesLived();
-var multiplier = {
-  // numbers - arrat of numbers
-  // multiplyBy - single number
-  // multiply method return a new array where teh numbers have been multiplied
-  numbers: [4, 3, 5],
-  multiplyBy: 3,
-  multiply: function multiply() {
-    var _this2 = this;
 
-    return this.numbers.map(function (number) {
-      return _this2.multiplyBy * number;
-    });
-  }
+var reset = function reset() {
+  count = 0;
+  renderCounterApp();
 };
-console.log(multiplier.multiply());
+
+var appRoot = document.getElementById("app");
+
+var renderCounterApp = function renderCounterApp() {
+  var templateTwo = React.createElement("div", null, React.createElement("h1", null, "Count: ", count), React.createElement("button", {
+    onClick: addOne
+  }, "+1"), " \xA0", React.createElement("button", {
+    onClick: minusOne
+  }, "-1"), " \xA0", React.createElement("button", {
+    onClick: reset
+  }, "reset"));
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
