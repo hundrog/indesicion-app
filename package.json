@@ -8,17 +8,19 @@
     "build": "webpack --watch",
     "build-babel": "babel src/app.js -o public/scripts/app.js --presets=@babel/env,@babel/react --watch"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "webpack-cli": "^3.3.6"
-  },
-  "dependencies": {
+    "webpack-cli": "^3.3.6",
     "live-server": "^1.2.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "validator": "^11.1.0",
     "webpack": "^4.39.2"
   }
 }
