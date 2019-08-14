@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "babel src -d public/sripts"
+    "serve": "live-server public",
+    "build": "webpack --watch",
+    "build-babel": "babel src/app.js -o public/scripts/app.js --presets=@babel/env,@babel/react --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -12,9 +14,11 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "eslint": "^6.1.0",
-    "eslint-plugin-react": "^7.14.3"
+    "eslint-plugin-react": "^7.14.3",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "webpack": "^4.39.2"
   }
 }
