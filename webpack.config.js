@@ -7,15 +7,6 @@ module.exports = {
     filename: "bundle.js"
   },
   mode: "development",
-  // module: {
-  //   rules: [
-  //     {
-  //       loader: "babel-loader",
-  //       test: /\.js$/,
-  //       exclude: /node_modules/
-  //     }
-  //   ]
-  // }
   module: {
     rules: [
       {
@@ -24,10 +15,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
+            babelrc: true
           }
         }
       }
     ]
+  },
+  devtool: "cheap-module-eval-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "public")
   }
 };
