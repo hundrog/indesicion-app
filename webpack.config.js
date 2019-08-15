@@ -18,6 +18,10 @@ module.exports = {
             babelrc: true
           }
         }
+      },
+      {
+        test: /\.s?css$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
